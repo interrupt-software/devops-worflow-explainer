@@ -15,6 +15,10 @@
     text-rendering: optimizeSpeed;
     line-height: 1.5;
 }
+
+body {
+    background-color: var(--main-bg-color);
+}
 .main-container {
     display: table;
     position: absolute;
