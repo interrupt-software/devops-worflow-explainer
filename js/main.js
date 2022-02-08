@@ -14,7 +14,7 @@ var data = {
         { id: 46, "template": "/template_01.html", "size": { height: 2, width: 3 } },
         { id: 47, "template": "/template_02.html", "size": { height: 2, width: 3 } },
         { id: 48, "template": "/template_03.html", "size": { height: 2, width: 3 } },
-        { id: 49, "template": "/template_04.html", "size": { height: 2, width: 3 } },
+        { id: 49, "template": "/template_04.html", "size": { height: 2, width: 3 } }
     ]
 };
 
@@ -44,7 +44,7 @@ var lines = {
         { id: 34, "line": "vertical", "dashed": true, "artifact": "D" },
 
         { id: 36, "line": "vertical", "artifact": "E" },
-        { id: 24, "arrow": "up" },
+        { id: 24, "arrow": "up" }
     ]
 };
 
@@ -56,7 +56,6 @@ window.onload = function () {
 
     for (var i = 0; i < cells_needed; i++) {
         const cell = document.createElement("div");
-
         const cell_data = data.cells.find(n => n.id === i);
         const cell_line = lines.cells.find(n => n.id === i);
 
@@ -64,6 +63,7 @@ window.onload = function () {
         if (cell_data) {
 
             cell.classList.add("workflow__cell");
+            cell.setAttribute("data-clickable", "true");
 
             if ("size" in cell_data) {
                 const h_span = cell_data.size.width;
@@ -115,6 +115,7 @@ window.onload = function () {
                 fetch(content)
                     .then(r => r.text())
                     .then(t => cell.innerHTML = t);
+                cell.setAttribute("data-clickable", "false");
             }
 
         } else if (cell_line) {
@@ -171,4 +172,22 @@ window.onload = function () {
         // }
         workflow.appendChild(cell);
     }
+
+    /* 
+      Load event listeners for all the "clickable" entities
+    */
+
+    const interactiveCells = document.querySelectorAll(".workflow__cell");
+
+    interactiveCells.forEach(interactiveCell => {
+
+        const clickable = interactiveCell.getAttribute("data-clickable");
+
+        if (clickable === "true") {
+            interactiveCell.addEventListener('click', () => {
+                alert("Click");
+            })
+        }
+
+    })
 }
