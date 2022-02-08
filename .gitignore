@@ -1,0 +1,15 @@
+# MacOS generated files #
+#########################
+.DS_Store
+.DS_Store?
+
+# Any test files #
+##################
+test*
+
+# The Affinty Designer files #
+# Those are not practically  #
+# required. If you want them #
+# please just ask.           #
+##############################
+*.afdesign

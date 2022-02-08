@@ -1,0 +1,209 @@
+:root {
+    --main-bg-color: #FFFFFF;
+    --hashi-gray-2: #343536;
+    --hashi-gray-4: #BFBFC0;
+    --hashi-gray-6: #F2F2F3;
+    --hashi-main: #02A8EF;
+    --hashi-primary: #63D0FF;
+    --hashi-secondary: #D4F2FF;
+    --hashi-accent: #CEFCF2;
+    --hashi-highlight: #FFDBD2;
+}
+* {
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+.main-container {
+    display: table;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.main-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+.main-content {
+    max-width: 1440px;
+    max-height: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.workflow {
+    display: grid;
+    grid-template-columns: repeat(12, 120px);
+    grid-template-rows: repeat(7, 50);
+}
+.workflow__cell {
+    background-color: var(--hashi-secondary);
+    border-color: var(--hashi-gray-4);
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px var(--hashi-gray-4);
+    z-index: 888;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.workflow__cell:hover {
+    background-color: var(--hashi-highlight);
+}
+.workflow__cell-explainer {
+    padding-top: 20px;
+}
+.workflow__cell-horizontal-span-2 {
+    grid-column: span 2;
+}
+.workflow__cell-horizontal-span-3 {
+    grid-column: span 3;
+}
+.workflow__cell-horizontal-span-4 {
+    grid-column: span 4;
+}
+.workflow__cell-vertical-span-2 {
+    grid-row: span 2;
+    height: 100%;
+}
+.workflow__cell-vertical-span-3 {
+    grid-row: span 3;
+    height: 100%;
+}
+.workflow__cell-empty {
+}
+.arrow-container {
+    display: flex;
+    min-height: 50px;
+    height: 100%;
+    position: relative;
+    z-index: 900;
+}
+.arrow-container-up {
+    justify-content: center;
+    align-items: flex-start;
+}
+.arrow-container-down {
+    justify-content: center;
+    align-items: flex-end;
+}
+.arrow-container-left {
+    justify-content: left;
+    align-items: center;
+}
+.arrow-container-right {
+    justify-content: right;
+    align-items: center;
+}
+.arrow-pointer {
+    opacity: 0.75;
+}
+.arrow-pointer > ul {
+    list-style-type: none;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    padding-inline-start: 0px;
+}
+.arrow {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: none;
+    border-top: 3px solid var(--hashi-gray-2);
+    border-right: 3px solid var(--hashi-gray-2);
+}
+.arrow-up {
+    transform: rotate(-45deg);
+    box-shadow: -3px 3px 5px 0px var(--hashi-gray-4) inset;
+}
+.arrow-right {
+    margin-right: 5px;
+    transform: rotate(45deg);
+    box-shadow: 3px -3px 5px var(--hashi-gray-4);
+}
+.arrow-down {
+    transform: rotate(135deg);
+    box-shadow: 3px -3px 5px 0px var(--hashi-gray-4);
+}
+.arrow-left {
+    transform: rotate(-135deg);
+    box-shadow: -3px 3px 5px 0px var(--hashi-gray-4) inset;
+}
+.line-up, .line-down, .line-vertical {
+    border-left: 3px solid var(--hashi-gray-2);
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -1.75px;
+    margin-bottom: 3px;
+    box-shadow: 3px 3px 5px var(--hashi-gray-4);
+}
+.line-left, .line-right, .line-horizontal {
+    border-top: 3px solid var(--hashi-gray-2);
+    width: 95%;
+    position: absolute;
+    top: 50%;
+    margin-top: -2.75px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    box-shadow: 3px 3px 5px var(--hashi-gray-4);
+}
+.line-horizontal-dashed, .line-vertical-dashed {
+    border-top: 3px dashed var(--hashi-main);
+    border-left: 3px dashed var(--hashi-main);
+}
+.step-label {
+    width: 75%;
+    text-align: center;
+}
+.step-label > h2 {
+    font-size: 1.25ch;
+    text-transform: uppercase;
+}
+.explainer {
+    margin: 10px;
+    display: flex;
+}
+.explainer-text {
+    font-size: 1.5ch;
+    margin-left: 10px;
+}
+.explainer-text > h2 {
+    font-size: 1.5ch;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.step-number {
+    font-size: 1.5ch;
+    background-color: var(--hashi-main);
+    display: flex;
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    border-style: double;
+    border-color: var(--hashi-primary);
+}
+.step-artifact-container {
+    position: absolute;
+    z-index: 998;
+}
+.step-artifact {
+    font-size: 1.25ch;
+    font-weight: 800;
+    background-color: var(--hashi-secondary);
+    display: flex;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--hashi-gray-2);
+    transform: rotate(45deg);
+}
+.step-artifact .step-artifact-label {
+    transform: rotate(-45deg);
+}
