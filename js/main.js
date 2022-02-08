@@ -173,9 +173,9 @@ window.onload = function () {
         workflow.appendChild(cell);
     }
 
-    /* 
+    /***** ***** ***** ***** ***** ***** ***** ***** *****  
       Load event listeners for all the "clickable" entities
-    */
+    ***** ***** ***** ***** ***** ***** ***** ***** *****/
 
     const interactiveCells = document.querySelectorAll(".workflow__cell");
 
