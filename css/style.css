@@ -40,7 +40,7 @@
     background-color: var(--hashi-secondary);
     border-color: var(--hashi-gray-4);
     height: 150px;
-    border-radius: 10px;
+    border-radius: 3px;
     box-shadow: 3px 3px 5px var(--hashi-gray-4);
     z-index: 888;
     display:flex;
@@ -52,7 +52,8 @@
     background-color: var(--hashi-highlight);
 }
 .workflow__cell-explainer {
-    padding-top: 20px;
+    padding-top: 40px;
+    border-top: 1px solid var(--hashi-gray-6);
 }
 .workflow__cell-horizontal-span-2 {
     grid-column: span 2;
