@@ -11,10 +11,10 @@ var data = {
         { id: 43, "step": "6", "label": "Automated Testing" },
         { id: 45, "step": "7", "label": "Build Release" },
 
-        { id: 46, "template": "/template_01.html", "size": { height: 2, width: 3 } },
-        { id: 47, "template": "/template_02.html", "size": { height: 2, width: 3 } },
-        { id: 48, "template": "/template_03.html", "size": { height: 2, width: 3 } },
-        { id: 49, "template": "/template_04.html", "size": { height: 2, width: 3 } }
+        { id: 46, "template": "template_01.html", "size": { height: 2, width: 3 } },
+        { id: 47, "template": "template_02.html", "size": { height: 2, width: 3 } },
+        { id: 48, "template": "template_03.html", "size": { height: 2, width: 3 } },
+        { id: 49, "template": "template_04.html", "size": { height: 2, width: 3 } }
     ]
 };
 
